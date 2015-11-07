@@ -5,6 +5,11 @@ angular.module('shortly', [
   'shortly.auth',
   'ngRoute'
 ])
+.factory('linksStorage', function () {
+  var links = [];
+  
+  return links;
+})
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/signin', {
@@ -18,7 +23,7 @@ angular.module('shortly', [
     .when('/', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
-    })
+    });
     // Your code here
 
     // We add our $httpInterceptor into the array
