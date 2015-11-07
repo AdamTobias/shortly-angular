@@ -8,7 +8,8 @@
       <li style="float: right" ng-click="logout()"><a><strong>Logout</strong></a></li>
     </ul>
   </div>
-  <ul class="link" ng-repeat="link in links">
+  <ul> Search links: <input type='text' class='filterBar' ng-model='linksFilter'></ul>
+  <ul class="link" ng-click="linkClick(link)" ng-repeat="link in links | filter: linksFilterFunction">
     <img src="/assets/redirect_icon.png">
     <div class="title"> {{ link.title }} </div>
     <div class="info"> {{ link.base_url }}/{{link.code}} </div>
@@ -18,4 +19,5 @@
     </div>
   </ul>
 </div>
+
 

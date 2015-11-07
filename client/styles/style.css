@@ -48,6 +48,10 @@ h1 {
   background-color: #ccc;
 }
 
+.filterBar {
+  margin: 15px;
+}
+
 #container {
   clear: both;
   margin-top: 10px;
