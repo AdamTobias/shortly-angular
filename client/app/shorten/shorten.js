@@ -1,5 +1,5 @@
 angular.module('shortly.shorten', [])
-.controller('ShortenController', function ($scope, $location, linksStorage, $http) {
+.controller('ShortenController', function ($scope, $location, $http) {
   // Your code here
   $scope.currentUrls = [];
 
@@ -10,7 +10,6 @@ angular.module('shortly.shorten', [])
       headers: {'Content-Type': 'application/json'},
       data: { url: $scope.url }
     }).then(function (response) {
-      linksStorage.push(response.data);
       $scope.currentUrls.push(response.data);
     });
     $scope.url = '';

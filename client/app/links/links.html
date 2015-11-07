@@ -1,5 +1,19 @@
 <div id='container'>
   <!-- Your html here -->
-  <div>These are our Links</div>
-  <div ng-repeat="link in links"> {{ link }} </div>
+  <h1>Links</h1>
+  <div class="navigation">
+    <ul>
+      <li><a href="#/links"><strong>All Links</strong></a></li>
+      <li><a href="#/"><strong>Submit a link</strong></a></li>
+      <li style="float: right"><a href="logout"><strong>Logout</strong></a></li>
+    </ul>
+  </div>
+  <div class="link" ng-repeat="link in links">
+    <img src="/assets/redirect_icon.png">
+    <span class="title"> {{ link.title }} </span>
+    <span class="info"> {{ link.base_url }}/{{link.code}} </span>
+    <span class="original"> {{ link.url }} </span>
+    <span class="visits"> {{ link.visits }} </span>
+  </div>
 </div>
+

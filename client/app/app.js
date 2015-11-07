@@ -5,10 +5,6 @@ angular.module('shortly', [
   'shortly.auth',
   'ngRoute'
 ])
-.factory('linksStorage', function () {
-  var links = [];
-  return links;
-})
 .config(function ($routeProvider, $httpProvider) {
   $routeProvider
     .when('/signin', {
