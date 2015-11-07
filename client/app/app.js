@@ -7,7 +7,6 @@ angular.module('shortly', [
 ])
 .factory('linksStorage', function () {
   var links = [];
-  
   return links;
 })
 .config(function ($routeProvider, $httpProvider) {
@@ -23,6 +22,10 @@ angular.module('shortly', [
     .when('/', {
       templateUrl: 'app/shorten/shorten.html',
       controller: 'ShortenController'
+    })
+    .when('/links', {
+      templateUrl: 'app/links/links.html',
+      controller: 'LinksController'
     });
     // Your code here
 
