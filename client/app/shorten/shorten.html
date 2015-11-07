@@ -1,22 +1,23 @@
 <div id='container'>
   <h1>shorten</h1>
-  <a href="#/links"><strong>All Links</strong></a>
   <div class="navigation">
     <ul>
       <li><a href="#/links"><strong>All Links</strong></a></li>
       <li><a href="#/"><strong>Submit a link</strong></a></li>
-      <li style="float: right"><a href="logout"><strong>Logout</strong></a></li>
+      <li style="float: right" ng-click="logout()"><a><strong>Logout</strong></a></li>
     </ul>
   </div>
   <form name="shortenForm" ng-submit='shorten()'>
     <input type='text' ng-model='url'> <!-- -->
     <button>shorten</button>
   </form>
-  <div class="link" ng-click='linkClick(url)' ng-repeat="url in currentUrls">     
+  <ul class="link" ng-repeat="link in links">
     <img src="/assets/redirect_icon.png">
-    <span class="title"> {{ url.title }} </span>
-    <span class="info"> {{ url.base_url }}/{{url.code}} </span>
-    <span class="original"> {{ url.url }} </span>
-    <span class="visits"> {{ url.visits }} </span>
-  </div>
+    <div class="title"> {{ link.title }} </div>
+    <div class="info"> {{ link.base_url }}/{{link.code}} </div>
+    <div class="original"> {{ link.url }} </div>
+    <div class="visits"> Visits:
+      <span class="counts"> {{ link.visits }} </span>
+    </div>
+  </ul>
 </div>

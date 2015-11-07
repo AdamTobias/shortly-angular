@@ -5,15 +5,17 @@
     <ul>
       <li><a href="#/links"><strong>All Links</strong></a></li>
       <li><a href="#/"><strong>Submit a link</strong></a></li>
-      <li style="float: right"><a href="logout"><strong>Logout</strong></a></li>
+      <li style="float: right" ng-click="logout()"><a><strong>Logout</strong></a></li>
     </ul>
   </div>
-  <div class="link" ng-repeat="link in links">
+  <ul class="link" ng-repeat="link in links">
     <img src="/assets/redirect_icon.png">
-    <span class="title"> {{ link.title }} </span>
-    <span class="info"> {{ link.base_url }}/{{link.code}} </span>
-    <span class="original"> {{ link.url }} </span>
-    <span class="visits"> {{ link.visits }} </span>
-  </div>
+    <div class="title"> {{ link.title }} </div>
+    <div class="info"> {{ link.base_url }}/{{link.code}} </div>
+    <div class="original"> {{ link.url }} </div>
+    <div class="visits"> Visits:
+      <span class="counts"> {{ link.visits }} </span>
+    </div>
+  </ul>
 </div>
 

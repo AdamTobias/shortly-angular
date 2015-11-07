@@ -1,5 +1,5 @@
 angular.module('shortly.shorten', [])
-.controller('ShortenController', function ($scope, $location, $http) {
+.controller('ShortenController', function ($scope, $location, $http, Auth) {
   // Your code here
   $scope.currentUrls = [];
 
@@ -19,4 +19,9 @@ angular.module('shortly.shorten', [])
     console.dir(url);
     window.location.href = url.base_url + '/api/links/' + url.code;
   };
+
+  $scope.logout = function () {
+    Auth.signout();
+  }
+
 });
