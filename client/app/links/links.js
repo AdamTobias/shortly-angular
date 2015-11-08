@@ -9,7 +9,6 @@ angular.module('shortly.links', ['shortly.services'])
     data: {}
   }).then(function (response) {
     $scope.links = response.data;
-    console.dir($scope.links);
   });
 
   $scope.linkClick = function (url) {
@@ -18,7 +17,7 @@ angular.module('shortly.links', ['shortly.services'])
   };
 
   $scope.linksFilterFunction = function (filterInput) {
-    if(!$scope.linksFilter){
+    if (!$scope.linksFilter) {
       return true;
     }
     return filterInput.url.toLowerCase().indexOf($scope.linksFilter.toLowerCase()) !== -1 ||
@@ -27,6 +26,6 @@ angular.module('shortly.links', ['shortly.services'])
 
   $scope.logout = function () {
     Auth.signout();
-  }
+  };
 
 });

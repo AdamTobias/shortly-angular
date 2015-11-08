@@ -16,12 +16,11 @@ angular.module('shortly.shorten', [])
   };
 
   $scope.linkClick = function (url) {
-    console.dir(url);
     window.location.href = url.base_url + '/api/links/' + url.code;
   };
 
   $scope.logout = function () {
     Auth.signout();
-  }
+  };
 
 });
